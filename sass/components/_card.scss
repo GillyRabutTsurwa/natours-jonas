@@ -1,0 +1,243 @@
+.card {
+    // Card Functionality
+    height: 50rem;
+    position: relative;
+    -webkit-perspective: 150rem;
+    perspective: 150rem;
+
+    &__front,
+    &__back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        font-size: 2rem;
+        border-radius: 3px;
+        -webkit-box-shadow: 0 1.5rem 4rem rgba($colour-black, 0.15);
+        box-shadow: 0 1.5rem 4rem rgba($colour-black, 0.15);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        overflow: hidden;
+
+        -webkit-transition: all 1.2s ease;
+
+        transition: all 1.2s ease;
+    }
+
+    &__front {
+        //NOTE: DIDNT REALLY NEED TO GET STYLED. BUT WILL LEAVE IT
+    }
+
+    &__back {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+
+        &--1 {
+            background-image: -webkit-gradient(linear, left top, right bottom, from($colour-secondary-light), to($colour-secondary-dark));
+            background-image: linear-gradient(to right bottom, $colour-secondary-light, $colour-secondary-dark);
+        }
+
+        &--2 {
+            background-image: -webkit-gradient(linear, left top, right bottom, from($colour-primary-light), to($colour-primary-dark));
+            background-image: linear-gradient(to right bottom, $colour-primary-light, $colour-primary-dark);
+        }
+
+        &--3 {
+            background-image: -webkit-gradient(linear, left top, right bottom, from($colour-tertiary-light), to($colour-tertiary-dark));
+            background-image: linear-gradient(to right bottom, $colour-tertiary-light, $colour-tertiary-dark);
+        }
+
+    }
+
+    &:hover &__front {
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__back {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+
+    &__picture {
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+        &--1 {
+            background-image: -webkit-gradient(linear, left top, right bottom, from($colour-secondary-light), to($colour-secondary-dark)), url(../img/nat-5.jpg);
+            background-image: linear-gradient(to right bottom, $colour-secondary-light, $colour-secondary-dark), url(../img/nat-5.jpg);
+        }
+
+        &--2 {
+            background-image: -webkit-gradient(linear, left top, right bottom, from($colour-primary-light), to($colour-primary-dark)), url(../img/nat-7.jpg);
+            background-image: linear-gradient(to right bottom, $colour-primary-light, $colour-primary-dark), url(../img/nat-7.jpg);
+        }
+
+        &--3 {
+            background-image: -webkit-gradient(linear, left top, right bottom, from($colour-tertiary-light), to($colour-tertiary-dark)), url(../img/nat-6.jpg);
+            background-image: linear-gradient(to right bottom, $colour-tertiary-light, $colour-tertiary-dark), url(../img/nat-6.jpg);
+        }
+    }
+
+    &__heading {
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-align: right;
+        text-transform: uppercase;
+        color: $colour-white;
+        width: 75%;
+    }
+
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+
+        &--1 {
+            background-image: -webkit-gradient(linear, left top, right bottom, from(rgba($colour-secondary-light, 0.75)), to(rgba($colour-secondary-dark, 0.75)));
+            background-image: linear-gradient(to right bottom, rgba($colour-secondary-light, 0.75), rgba($colour-secondary-dark, 0.75));
+        }
+
+        &--2 {
+            background-image: -webkit-gradient(linear, left top, right bottom, from(rgba($colour-primary-light, 0.75)), to(rgba($colour-primary-dark, 0.75)));
+            background-image: linear-gradient(to right bottom, rgba($colour-primary-light, 0.75), rgba($colour-primary-dark, 0.75));
+        }
+
+        &--3 {
+            background-image: -webkit-gradient(linear, left top, right bottom, from(rgba($colour-tertiary-light, 0.75)), to(rgba($colour-tertiary-dark, 0.75)));
+            background-image: linear-gradient(to right bottom, rgba($colour-tertiary-light, 0.75), rgba($colour-tertiary-dark, 0.75));
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+
+        & ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+
+            & li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $colour-grey-light-2;
+                }
+            }
+        }
+    }
+
+    &__cta {
+        position: absolute;
+        @include relative-absolute-centre-elements;
+        text-align: center;
+        width: 90%;
+    }
+
+    &__price-box {
+        text-align: center;
+        color: $colour-white;
+    }
+
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
+    }
+
+
+
+
+
+
+
+    @include responsive(tablet-portrait) {
+        height: auto;
+        border-radius: 3px;
+        background-color: $colour-white;
+        -webkit-box-shadow: 0 1.5rem 4rem rgba($colour-black, 0.15);
+        box-shadow: 0 1.5rem 4rem rgba($colour-black, 0.15);
+
+        &__front,
+        &__back {
+            position: relative;
+            height: auto;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        &__front {
+            //NOTE: DIDNT REALLY NEED TO GET STYLED. BUT WILL LEAVE IT
+        }
+
+        &__back {
+            -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+            -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+
+            &--1 {
+                background-image: -webkit-gradient(linear, left top, right bottom, from($colour-secondary-light), to($colour-secondary-dark));
+                background-image: linear-gradient(to right bottom, $colour-secondary-light, $colour-secondary-dark);
+            }
+
+            &--2 {
+                background-image: -webkit-gradient(linear, left top, right bottom, from($colour-primary-light), to($colour-primary-dark));
+                background-image: linear-gradient(to right bottom, $colour-primary-light, $colour-primary-dark);
+            }
+
+            &--3 {
+                background-image: -webkit-gradient(linear, left top, right bottom, from($colour-tertiary-light), to($colour-tertiary-dark));
+                background-image: linear-gradient(to right bottom, $colour-tertiary-light, $colour-tertiary-dark);
+            }
+
+        }
+
+        &:hover &__front {
+            -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+        }
+
+        //he deleted this block
+        // &:hover &__back {
+        //     -webkit-transform: rotateY(0);
+        //     transform: rotateY(0);
+        // }
+
+        &__details {
+            padding: 1rem 3rem;
+        }
+
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            -webkit-transform: translate(0);
+            transform: translate(0);
+            width: 100%;
+            padding: 7rem 4rem 4rem 4rem;
+        }
+
+        &__price-box {
+            margin-bottom: 3rem;
+        }
+
+        &__price-value {
+            font-size: 6rem;
+
+        }
+    }
+}

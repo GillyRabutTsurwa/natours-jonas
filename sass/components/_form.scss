@@ -1,0 +1,125 @@
+.form {
+	&__group:not(:last-child) {
+		margin-bottom: 2.5rem;
+	}
+
+	&__input {
+		display: block;
+		font-size: 1.5rem;
+		font-family: inherit; //NOTE: Because inputs don't inherit the font-family:
+		color: inherit;
+		padding: 1.5rem 2rem;
+		border-radius: 2px;
+		background-color: rgba($colour-white, 0.5);
+		border: none;
+		border-bottom: 3px solid transparent;
+		width: 100%;
+
+		-webkit-transition: all 0.8s ease;
+
+		transition: all 0.8s ease;
+
+		//NEW:
+		/*
+            pseudo-element are represented by 2 colons
+            represent things that are already on the webpage
+            will only work on safari and chrome au moment de la vidéo
+        */
+		&::-webkit-input-placeholder {
+			color: $colour-grey-superdark;
+		}
+
+		&:focus {
+			outline: none;
+			border-bottom: 3px solid $colour-tertiary;
+			-webkit-box-shadow: 0 1rem 2rem rgba($colour-black, 0.1);
+			box-shadow: 0 1rem 2rem rgba($colour-black, 0.1);
+
+			&:invalid {
+				border-bottom: 3px solid $colour-secondary-dark;
+			}
+		}
+	}
+
+	&__label {
+		display: block;
+		font-size: 1.2rem;
+		font-weight: 700;
+		margin-top: 0.7rem;
+		margin-left: 2rem;
+		-webkit-transition: 0.3s ease;
+		transition: 0.3s ease;
+	}
+
+	// NEW: Sibling selector.
+	//NOTE: Adjacent sibling selector: +
+	//NOTE: General sibling selector: ~
+	//NOTE: element selected by sibling selector doit apparaître APRÈS qui est utilisé pour le trouver
+	//NOTE: placeholder-shown means exactly what it says. ie when there's nothing in the input
+
+	//NOTE: Translation of this is...
+	/*
+        When the placeholder is showing,
+        Hide the label, and move it up.
+        Thus, when we start typing, the label will be visible and move back to it's natural position
+    */
+	&__input:placeholder-shown+&__label {
+		// Hide the label
+		opacity: 0;
+		visibility: hidden; // Otherwise, element will be on the page but still invisible
+		// Also, we are not using just visibility because visibility ne peut pas être animée
+		-webkit-transform: translateY(-4rem);
+		transform: translateY(-4rem);
+	}
+
+	&__radio-group {
+		width: 45%;
+		display: inline-block;
+
+		@include responsive(tablet-portrait) {
+			width: 100%;
+			margin: 1rem 0;
+		}
+	}
+
+	&__radio-input {
+		display: none;
+	}
+
+	&__radio-label {
+		position: relative;
+		font-size: $default-font-size;
+		cursor: pointer;
+		padding-left: 4.5rem;
+	}
+
+	&__radio-button {
+		display: inline-block; //LINE NEEDED
+		position: absolute;
+		top: -0.4rem;
+		left: 0;
+		height: 3rem;
+		width: 3rem;
+		border: 0.5rem solid $colour-primary;
+		border-radius: 50%;
+
+
+		&::after {
+			content: ""; //NEEDED for before and after pseudo elements
+			display: block; //NEEDED?
+			height: 1rem;
+			width: 1rem;
+			border-radius: 50%;
+			background-color: $colour-primary;
+			position: absolute;
+			@include relative-absolute-centre-elements;
+			opacity: 0;
+			-webkit-transition: opacity 0.2s;
+			transition: opacity 0.2s;
+		}
+	}
+
+	&__radio-input:checked+&__radio-label>&__radio-button::after {
+		opacity: 1;
+	}
+}

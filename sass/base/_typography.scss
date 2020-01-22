@@ -1,0 +1,76 @@
+.header__main {
+    &--title {
+        color: $colour-white;
+        text-transform: uppercase;
+
+        &-primary {
+            display: block;
+            font-size: 6rem;
+            font-weight: 400;
+            letter-spacing: 3.5rem;
+
+            @include responsive(phone) {
+                letter-spacing: 1rem;
+                font-size: 5rem;
+            }
+        }
+
+        &-secondary {
+            display: block;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 2rem;
+
+            @include responsive(phone) {
+                letter-spacing: 0.5rem;
+                font-size: 4rem;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.heading__secondary {
+    display: inline-block;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background-image: -webkit-gradient(linear, left top, right top, from($colour-primary-light), to($colour-primary-dark));
+    background-image: linear-gradient(to right, $colour-primary-light, $colour-primary-dark);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+
+    @include responsive(tablet-portrait) {
+        font-size: 3rem;
+    }
+
+    @include responsive(phone) {
+        font-size: 2.5rem;
+    }
+
+    &:hover {
+
+        -webkit-transform: skew(2deg, 5deg);
+
+        transform: skew(2deg, 5deg) scale(1.1);
+        text-shadow: 0.5rem 1rem 2rem rgba($colour-black, 0.2);
+    }
+}
+
+.heading__tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: $default-font-size;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}

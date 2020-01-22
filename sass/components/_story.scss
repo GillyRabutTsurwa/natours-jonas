@@ -1,0 +1,123 @@
+.story {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 75%;
+	margin: 0 auto;
+	padding: 6rem;
+	-webkit-box-shadow: 0 3rem 6rem rgba($colour-black, 0.1);
+	box-shadow: 0 3rem 6rem rgba($colour-black, 0.1);
+	background-color: rgba($colour-white, 0.6);
+	border-radius: 3px;
+	font-size: $default-font-size;
+	-webkit-transform: skew(-12deg);
+	transform: skew(-12deg);
+
+	&>* {
+		-webkit-transform: skew(12deg);
+		transform: skew(12deg);
+	}
+
+	&:first-of-type {
+		margin-bottom: 8rem;
+	}
+
+	&__shape {
+		position: relative;
+		height: 14rem;
+		min-width: 14rem;
+		border-radius: 50%;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		-webkit-box-flex: 1;
+		-ms-flex: 1 0 20%;
+		flex: 1 0 20%;
+		margin-right: 2rem;
+		-webkit-filter: grayscale(1);
+		filter: grayscale(1);
+		-webkit-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+
+		&--1 {
+			background-image: url(../img/nat-8.jpg);
+		}
+
+		&--2 {
+			background-image: url(../img/nat-9.jpg);
+		}
+	}
+
+	&__text {
+		-webkit-box-flex: 1;
+		-ms-flex: 1 1 80%;
+		flex: 1 1 80%;
+	}
+
+	&__caption {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, 20%);
+		transform: translate(-50%, 20%);
+		color: $colour-white;
+		text-transform: uppercase;
+		font-size: 1.7rem;
+		text-align: center;
+
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+
+		opacity: 0;
+	}
+
+	&:hover &__caption {
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		opacity: 1;
+	}
+
+	&:hover &__shape {
+		-webkit-filter: grayscale(0);
+		filter: grayscale(0);
+	}
+}
+
+
+
+.row.row-story {
+	@include responsive(tablet-portrait) {
+		max-width: 70rem;
+	}
+
+	@include responsive(phone) {
+		max-width: 55rem;
+	}
+
+	& .story {
+		@include responsive(tablet-portrait) {
+			height: 30rem;
+			width: 100%;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+		}
+
+		@include responsive(phone) {
+			-webkit-transform: skewX(0);
+			transform: skewX(0);
+		}
+
+		&>* {
+			@include responsive(phone) {
+				-webkit-transform: skewX(0);
+				transform: skewX(0);
+			}
+		}
+	}
+
+
+}

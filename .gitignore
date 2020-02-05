@@ -2,3 +2,5 @@
 package-lock.json
 tasks.md 
 notes.md 
+# Local Netlify folder
+.netlify

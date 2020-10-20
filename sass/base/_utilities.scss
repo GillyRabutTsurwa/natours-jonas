@@ -13,3 +13,19 @@
 .u-margin-bottom-large {
     margin-bottom: 8rem;
 }
+
+.colour-btn-primary {
+    background-image: -webkit-gradient(linear, left top, right bottom, from($colour-primary-light), to($colour-primary-dark));
+    background-image: linear-gradient(to bottom right, $colour-primary-light, $colour-primary-dark);
+}
+
+.colour-btn-secondary {
+    background-image: -webkit-gradient(linear, left top, right bottom, from($colour-secondary-light), to($colour-secondary-dark));
+    background-image: linear-gradient(to bottom right, $colour-secondary-light, $colour-secondary-dark);
+}
+
+.colour-btn-tertiary {
+    background-image: -webkit-gradient(linear, left top, right bottom, from($colour-tertiary-light), to($colour-tertiary-dark));
+    background-image: linear-gradient(to bottom right, $colour-tertiary-light, $colour-tertiary-dark);
+
+}

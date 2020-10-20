@@ -29,8 +29,15 @@
 * More stuff with transform: skew()
 * The direct child selector
 
+## Quoi apprendre - Version 5
+
+* Flip-card 
+* CSS Perspective
+* backface-visibility
+* background blend modes
+* box-deoration-break
+
 ## Tasks yet to do
 
 * Look again at the selector of that hover, not hover part.
 * Animate the header and button
-* Make that actual button

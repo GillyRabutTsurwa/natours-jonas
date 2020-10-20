@@ -1,3 +1,33 @@
+.btn-primary {
+
+    &:link,
+    &:visited {
+        display: inline-block;
+        color: $colour-white;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 400;
+        border-radius: 3rem;
+        padding: 1.4rem 2.8rem;
+        -webkit-box-shadow: 0 1rem 4rem rgba($colour-black, 0.3);
+        box-shadow: 0 1rem 4rem rgba($colour-black, 0.3);
+
+        -webkit-transition: all 0.3s ease;
+
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        //Je sais pas encore
+    }
+
+    &:active {
+        -webkit-transform: translateY(0.5rem);
+        transform: translateY(0.5rem);
+    }
+}
+
 .btn-text {
 
     &:link,
@@ -25,8 +55,8 @@
 
     &:active {
         -webkit-box-shadow: 0 0.5rem 2rem rgba($colour-black, 0.15);
-                box-shadow: 0 0.5rem 2rem rgba($colour-black, 0.15);
+        box-shadow: 0 0.5rem 2rem rgba($colour-black, 0.15);
         -webkit-transform: translateY(0);
-                transform: translateY(0);
+        transform: translateY(0);
     }
 }

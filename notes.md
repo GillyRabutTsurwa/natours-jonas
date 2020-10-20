@@ -45,3 +45,10 @@
   * Skewing parent -degrees
   * Skewing Child +degrees of the same value to make it appear "straight"
 * Direct child selector: .[parentElement] > * { styles go here...}
+
+## Version 5 Notes
+
+* Perspective must always be on the parent element on the whose child has the transform
+* background-blend is how backgrounds should blend
+* A lot of styling. Used a lot of utility classes
+* TODO: Look at card.scss code, button.scss code and utilities.scss code to review

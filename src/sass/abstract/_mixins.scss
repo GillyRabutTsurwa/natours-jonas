@@ -72,6 +72,7 @@
             @content;
         }
 
+        // max width of 600px (0 - 600px) 
         // 600px = 37.5em
         // 600px (our desired px definition) / 16 (the number of px in 1 em)
     }
@@ -81,6 +82,7 @@
             @content;
         }
 
+        // max width of 900px (601px - 900px) 
         // 900px = 56.25em
         // 900px (our desired px definition) / 16 (the number of px in 1 em)
     }
@@ -90,16 +92,22 @@
             @content;
         }
 
+        // max width of 1200px (901px - 1200px) 
         // 1200px = 75rem
         // 1200px (our desired px definition) / 16 (the number of px in 1 em)
     }
+
+    //NOTE: All styles between 1201px and 1800px (75em and 112.5em) are our default styles (the ones that do not use media queries)
 
     @if $breakpoint==big-desktop {
         @media (min-width: 112.5em) {
             @content;
         }
 
+        // min width of 1800px (1800px+) 
         // 1800px = 112.5em
         // 1800px (our desired px definition) / 16 (the number of px in 1 em)
     }
 }
+
+//NOTE: For media queries, ems are more efficient in the browser than rems

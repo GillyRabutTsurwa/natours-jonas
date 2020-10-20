@@ -1,0 +1,81 @@
+// Light green: #7ED56F
+// Medium green: #55C57A
+// Dark green: #28B485
+
+$colour-primary: #55C57A;
+$colour-primary-light: #7ED56F;
+$colour-primary-dark: #28B485;
+$colour-white: #FFF;
+$colour-grey-dark: #777;
+$colour-black: #000;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 3rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+}
+
+.header {
+    position: relative;
+    height: 95vh;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba($colour-primary-light, 0.8)), to(rgba($colour-primary-dark, 0.80))), url(../img/hero.jpg);
+    background-image: linear-gradient(to right, rgba($colour-primary-light, 0.8), rgba($colour-primary-dark, 0.80)), url(../img/hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-clip-path: polygon(x y, x y, x y, x y);
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    color: $colour-white;
+
+    &__logo {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+
+        &--icon {
+            height: 3.5rem;
+        }
+    }
+
+    &__main {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        &--title {
+            color: $colour-white;
+            text-transform: uppercase;
+
+            &-primary {
+                display: block;
+                font-size: 6rem;
+                font-weight: 400;
+                letter-spacing: 3.5rem;
+            }
+
+            &-secondary {
+                display: block;
+                font-size: 2rem;
+                font-weight: 400;
+                letter-spacing: 2rem;
+            }
+        }
+    }
+}

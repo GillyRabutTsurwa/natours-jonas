@@ -13,3 +13,11 @@
     transform: translate(-50%, -50%);
   }
   
+## Version 2 Notes
+
+* Sass
+  * QUESTION: Tu sais comment l'installer ?
+  * Do you know how to write a script to compile sass to CSS?
+  * Do you know how to run the live-server and the sass compile script simultaneously?
+    * HINT: npm-run-all package
+  * La méthode t'est bien fixée so we're good there

@@ -1,0 +1,66 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin relative-absolute-center-elements {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+// 0 - 600px - telephone portable
+// 600 - 900 - Tablet portrait
+// 900-1200 - Tablet Landscape
+// (1200 - 1800) - normal styles s'appliquent
+// 1800px+ - big destops
+
+// $breakpoint arguement choices:
+// - phone 
+// - tablet portrait
+// - tablate landscape
+// - big desktop
+
+// 1em = 16px
+// Change the px to em
+// Simply divide # of px / 16.
+// ORDER: Base + Typography > General Layout + Grid > Page Layout > Components
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width: 37.5rem) {
+            @content;
+        }
+
+        //600px = 37.5em
+    }
+
+    @if $breakpoint==tablet-portrait {
+        @media (max-width: 56.25em) {
+            @content;
+        }
+
+        //900px = 56.25em
+    }
+
+    @if $breakpoint==tablet-landscape {
+        @media (max-width: 75em) {
+            @content;
+        }
+
+        //1200px = 75rem
+    }
+
+    @if $breakpoint==big-desktop {
+        @media (min-width: 112.5em) {
+            @content;
+        }
+
+        //1800px = 112.5em
+    }
+}

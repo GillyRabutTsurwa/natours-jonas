@@ -21,3 +21,17 @@
   * Do you know how to run the live-server and the sass compile script simultaneously?
     * HINT: npm-run-all package
   * La méthode t'est bien fixée so we're good there
+
+
+## Version 3 Notes
+  * That Learn More button was rather neat.
+  * outline and outline-offset
+    * NOTE: outline goes on the element's changed state (in our case hover)
+    * whereas outline-offset goes on the natural state of the element
+  * background-clip part was fresh
+    * background-image: linear-gradient(colours rangi couleurs)
+    * background-clip: text
+    * color: transparent
+
+
+  

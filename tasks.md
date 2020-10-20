@@ -13,11 +13,18 @@
 *   Variables and nesting my Sass
 *   Editing HTML (BEM Method) to make things easier in Sass
 
+## Quoi apprendre - Version 3
 
-
-
+*   CSS 7 - 1 architecture (Only used 5 though)
+*   Importing Sass files to main Sass file
+*   Utility Classes
+*   background-clip property
+*   transforming multiple properties simultaneousely
+*   outline-offset and outline properties
+*   Styling elements that are NOT hovered whereas others are.
 
 ## Tasks yet to do
 
+* Look again at the selector of that hover, not hover part.
 * Animate the header and button
-* Make the actual button
+* Make that actual button

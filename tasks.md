@@ -23,6 +23,12 @@
 *   outline-offset and outline properties
 *   Styling elements that are NOT hovered whereas others are.
 
+## Quoi apprendre - Version 4
+
+* Icon fonts - I like these; still not an expert at them
+* More stuff with transform: skew()
+* The direct child selector
+
 ## Tasks yet to do
 
 * Look again at the selector of that hover, not hover part.

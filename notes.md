@@ -52,3 +52,16 @@
 * background-blend is how backgrounds should blend
 * A lot of styling. Used a lot of utility classes
 * TODO: Look at card.scss code, button.scss code and utilities.scss code to review
+
+## Version 6 Notes
+
+* Background video. Really cool effect. I'll write some pseudocode first.
+  * container for the video > video content.
+    * To access our video, we use the video element tag and put the source element tag inside it.
+    * The video element tag will have a src attribute, which will be the path to the video
+    * And a type attribute which will be something like: type="video/[formatType]"
+    * By formatType, je veux dire, mp4, webm.
+    * Use a source tag for each formatType pour veiller que ça marche sur tous les navigateurs.
+  * container for the video will have relative positioning whereas the video content will have absolute positioning, with the goal of masking the entire parent container. Je veux dire... top: 0, left: 0; height: 100%, width: 100%;
+  * Also for the video content, on top of height and width, set the [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) to cover.
+  * This is the equivalent of background-size to cover but for [replaced elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element) to fit the size of their container

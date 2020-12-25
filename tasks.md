@@ -37,6 +37,17 @@
 * background blend modes
 * box-deoration-break
 
+## Quoi apprendre - Version 6
+
+* Make flow around shapes with shape-outside and float... Don't know if I like this much though
+* Applying a filter to images
+* Create a background video covering an entire section. THIS I like
+* Using the <video> HTML element
+* object-fit 
+
+
+
+
 ## Tasks yet to do
 
 * Look again at the selector of that hover, not hover part.

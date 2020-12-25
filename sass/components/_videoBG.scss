@@ -1,0 +1,21 @@
+.bg-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0.2;
+	z-index: -1000; //NOTE: To make sure it's in the back
+
+	&__content {
+		height: 100%;
+		width: 100%;
+		//NOTE: I like object-fit a lot
+		//NOTE: Needs to be applied to the CHILD
+		//NOTE: object-fit: cover fill up entire parent while keeping aspect ratio
+		//NOTE: height and width to 100% is not enough
+		//NOTE: object-fit: cover is like background-size: cover
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+}

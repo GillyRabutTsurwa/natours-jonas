@@ -7,7 +7,7 @@ Dark green: #28B485
 
 */
 
-*,
+*, 
 *::before,
 *::after {
     margin: 0;
